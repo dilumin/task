@@ -30,10 +30,10 @@ function Task() {
         if (response.ok) {
           // If user is found, set questions
           setQuestions([
-            data.randomQuestions.question1.question,
-            data.randomQuestions.question2.question,
-            data.randomQuestions.question3.question,
-            data.randomQuestions.question4.question,
+            data.randomQuestions.question1,
+            data.randomQuestions.question2,
+            data.randomQuestions.question3,
+            data.randomQuestions.question4,
           ]);
           setShowQuestions(true); // Show questions
         } else {

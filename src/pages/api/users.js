@@ -27,18 +27,15 @@ export default async function users(req, res) {
       const getRandomQuestion = async (collectionName) => {
         const collection = mongoose.connection.db.collection(collectionName);
         const count = await collection.countDocuments();
-
+      
         if (count === 0) {
           console.log(`Collection "${collectionName}" is empty`);
           return null; // Return null if the collection is empty
         }
-
+      
         const randomIndex = Math.floor(Math.random() * count);
         const randomDocument = await collection.find().skip(randomIndex).limit(1).toArray();
-        return {
-          id: randomDocument[0]._id.toString(), // Convert ObjectId to string
-          question: randomDocument[0].string,  // Get the question text
-        };
+        return randomDocument[0].string;  // Return the question text correctly
       };
 
       // Fetch one random question from each question bank
