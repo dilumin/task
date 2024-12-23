@@ -8,6 +8,7 @@ function Task() {
   const [phoneNumber, setPhoneNumber] = useState(""); // For phone number
   const [showQuestions, setShowQuestions] = useState(false);
   const [questions, setQuestions] = useState([]); // To store questions fetched from the API
+  const [isLoading, setIsLoading] = useState(false); // For loading state
 
   // Handle email input change
   const handleEmailChange = (e) => setEmail(e.target.value);
@@ -20,6 +21,7 @@ function Task() {
     if (email.trim() === "" || phoneNumber.trim() === "") {
       alert("Please enter a valid email address and phone number.");
     } else {
+      setIsLoading(true); // Show the loading screen
       try {
         // Make an API request to fetch questions
         const response = await fetch(`/api/users?email=${email}&phoneNumber=${phoneNumber}`);
@@ -40,6 +42,8 @@ function Task() {
       } catch (error) {
         console.error("Failed to fetch user data:", error);
         alert("Failed to fetch user data. Please try again.");
+      } finally {
+        setIsLoading(false); // Hide the loading screen
       }
     }
   };
@@ -115,6 +119,13 @@ function Task() {
           </div>
         </div>
       </div>
+
+      {/* Loading Screen */}
+      {isLoading && (
+        <div className="loading-overlay">
+          <div className="loader"></div>
+        </div>
+      )}
     </div>
   );
 }
