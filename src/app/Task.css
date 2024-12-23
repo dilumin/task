@@ -1,0 +1,443 @@
+/* Existing styles */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #F4F4F4;
+    /* height: 100%; */
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  body{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 100%; */
+    z-index: -1;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 15%;
+    width: 100%;
+    background-color: #057EF3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 0;
+  }
+  
+  .tagline {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .logout-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .welcome-message {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .btn-logout {
+    background-color: white;
+    color: #057EF3;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-logout:hover {
+    background-color: #f0f0f0;  
+  }
+  
+  .content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80vh;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    padding: 20px;
+    overflow-y: scroll;
+  }
+  
+  .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .logo img {
+    max-width: 90px;
+  }
+  
+  .welcome {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    color: #444;
+    margin: 20px 0;
+  }
+  
+  .con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    margin-top: 50px;
+  }
+  
+  .mn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 10px;
+  }
+  
+  .con p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    text-align: center;
+  }
+  
+  .con input {
+    width: 90%;
+    max-width: 400px;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: white;
+    color: black;
+  }
+  
+  .con input:focus {
+    border-color: #057EF3;
+    box-shadow: 0 0 5px rgba(5, 126, 243, 0.5);
+  }
+  
+  .btn-check {
+    width: 90%;
+    max-width: 400px;
+    height: 40px;
+    background-color: #057EF3;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-check:hover {
+    background-color: #0460c8;
+  }
+  
+  .questions {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .questions h3 {
+    font-size: 18px;
+    color: #444;
+  }
+  
+  .questions ul {
+    list-style-type: decimal;
+    padding-left: 20px;
+  }
+  
+  .questions li {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  .foot-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    /* position: fixed;
+    bottom: 20px; */
+  }
+  
+  .footer .quote {
+    font-style: italic;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .top {
+    position: fixed;
+    top: 20px;
+  }
+  
+  .logout-section {
+    position: fixed;
+    right: 20px;
+  }
+  
+  .questions-block {
+    background-color: #f9f9f9; /* Light background for contrast */
+    border: 1px solid #ddd; /* Subtle border for definition */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    margin-top: 20px; /* Spacing from other elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    margin-right: 30px;
+    margin-left: 30px;
+    text-align: left; /* Align text to the left */
+  }
+  
+  .questions-block h3 {
+    margin-top: 0; /* Remove default margin for better spacing */
+    margin-bottom: 15px; /* Add space below the heading */
+    font-size: 18px; /* Slightly larger font size */
+    color: #333; /* Darker text color for readability */
+    font-weight: bold; /* Emphasize the heading */
+  }
+  
+  .questions-block ul {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0; /* Remove default padding */
+    margin: 0; /* Reset margin */
+  }
+  
+  .questions-block li {
+    margin: 10px 0; /* Space between list items */
+    font-size: 16px; /* Readable font size */
+    color: #555; /* Subtle text color */
+    background-color: #fff; /* White background for list items */
+    border: 1px solid #e0e0e0; /* Light border for separation */
+    border-radius: 5px; /* Slight rounding for list items */
+    padding: 10px; /* Inner padding for list items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Light shadow for list items */
+  }
+  
+  /* Media Queries for responsiveness */
+  
+  @media (max-width: 768px) {
+    .header {
+      height: 10%;
+      padding: 0 10px;
+    }
+  
+    .tagline {
+      font-size: 16px;
+    }
+  
+    .welcome-message {
+      font-size: 12px;
+    }
+  
+    .btn-logout {
+      padding: 3px 8px;
+      font-size: 12px;
+    }
+  
+    .content {
+      width: 90%;
+      /* height: 70vh; */
+      padding: 15px;
+    }
+  
+    .welcome {
+      font-size: 24px;
+    }
+  
+    .con p {
+      font-size: 14px;
+    }
+  
+    .con input {
+      width: 100%;
+      max-width: 300px;
+      height: 35px;
+      font-size: 12px;
+    }
+  
+    .btn-check {
+      width: 100%;
+      max-width: 300px;
+      height: 35px;
+      font-size: 14px;
+    }
+  
+    .questions h3 {
+      font-size: 16px;
+    }
+  
+    .questions li {
+      font-size: 14px;
+    }
+  
+    .footer {
+      bottom: 10px;
+    }
+    .footer p {
+      font-size: 15px;
+    }
+  
+    .footer .quote {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header {
+      height: 8%;
+      padding: 0 5px;
+    }
+    .logo img {
+      max-width: 50px;
+    }
+  
+    .tagline {
+      font-size: 14px;
+    }
+  
+    .welcome-message {
+      font-size: 10px;
+    }
+  
+    .btn-logout {
+      padding: 2px 6px;
+      font-size: 10px;
+    }
+  
+    .content {
+      width: 95%;
+      /* height: 60vh; */
+      padding: 10px;
+    }
+    .con{
+      margin-top: 10px;
+    }
+    .header .mn{
+      display: none;
+    }
+    .welcome {
+      font-size: 20px;
+    }
+  
+    .con p {
+      font-size: 12px;
+    }
+    .footer p {
+      font-size: 10px;
+    }
+  
+  
+    .con input {
+      width: 100%;
+      max-width: 250px;
+      height: 30px;
+      font-size: 10px;
+    }
+    .content{
+      width: 85%;
+    }
+  
+    .btn-check {
+      width: 100%;
+      max-width: 250px;
+      height: 30px;
+      font-size: 12px;
+    }
+  
+    .questions h3 {
+      font-size: 14px;
+    }
+  
+    .questions li {
+      font-size: 12px;
+    }
+  
+    .footer {
+      bottom: 5px;
+    }
+  
+    .footer .quote {
+      font-size: 10px;
+    }
+  }
+  @media (max-width: 768px) {
+    .questions-block {
+      padding: 15px; /* Reduce padding for smaller screens */
+      width: 90%; /* Use more of the screen width */
+      max-width: none; /* Remove max-width constraint */
+      margin: 15px auto; /* Center the block */
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    }
+  
+    .questions-block h3 {
+      font-size: 16px; /* Slightly smaller heading */
+      margin-bottom: 10px; /* Adjust spacing */
+    }
+  
+    .questions-block li {
+      font-size: 14px; /* Smaller font for readability */
+      padding: 8px; /* Adjust padding */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .questions-block {
+      padding: 10px; /* Further reduce padding */
+      width: 95%; /* Use almost full width of the screen */
+      margin: 10px auto; /* Adjust margin */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Softer shadow */
+    }
+    .top{
+        top: 4px;
+    }
+  
+    .questions-block h3 {
+      font-size: 14px; /* Smaller heading */
+      margin-bottom: 8px; /* Adjust spacing */
+    }
+  
+    .questions-block li {
+      font-size: 12px; /* Smaller font size for compactness */
+      padding: 6px; /* Compact padding */
+    }
+  }
+  
+  
