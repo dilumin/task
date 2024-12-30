@@ -1,48 +1,39 @@
 import dbConnect from "../../lib/db";
 import mongoose from "mongoose";
 
-export default async function handler(req, res) {
+export default async function questions(req, res) {
   try {
-    // Connect to the database
+    // Ensure database connection
     await dbConnect();
 
-    // Start a session for the transaction
-    const session = await mongoose.startSession();
+    // Check if the request method is POST
+    if (req.method !== "POST") {
+      return res.status(405).json({ error: "Method not allowed. Use POST." });
+    }
 
-    // Define the logic to fetch a random document from a collection
-    const getRandomDocument = async (collectionName, session) => {
-      const collection = mongoose.connection.db.collection(collectionName);
-      const count = await collection.countDocuments({}, { session }); // Get total document count
-      if (count === 0) throw new Error(`Collection "${collectionName}" is empty`);
-      const randomIndex = Math.floor(Math.random() * count); // Generate random index
-      const randomDocument = await collection
-        .find({}, { session })
-        .skip(randomIndex)
-        .limit(1)
-        .toArray(); // Fetch the random document
-      return randomDocument[0]; // Return the first (and only) result
-    };
+    // Extract questions from the request body
+    const { questions } = req.body;
 
-    let randomQuestions;
+    if (!Array.isArray(questions) || questions.length === 0) {
+      return res.status(400).json({ error: "Invalid input. Provide a list of questions." });
+    }
 
-    // Run all fetches in a transaction
-    await session.withTransaction(async () => {
-      const question1 = await getRandomDocument("question1", session);
-      const question2 = await getRandomDocument("question2", session);
-      const question3 = await getRandomDocument("question3", session);
-      const question4 = await getRandomDocument("question4", session);
+    // Access the "question1" collection
+    const question1Collection = mongoose.connection.db.collection("question1");
 
-      // Combine the results
-      randomQuestions = { question1, question2, question3, question4 };
+    // Map questions to the format required by the database
+    const documents = questions.map((question) => ({ string: question }));
+
+    // Insert the questions into the collection
+    const result = await question1Collection.insertMany(documents);
+
+    // Respond with success message and inserted count
+    res.status(200).json({
+      message: "Questions added successfully.",
+      insertedCount: result.insertedCount,
     });
-
-    // End the session
-    session.endSession();
-
-    // Respond with the random questions
-    res.status(200).json(randomQuestions);
   } catch (error) {
-    console.error("Failed to fetch random questions:", error);
-    res.status(500).json({ error: "Failed to fetch random questions" });
+    console.error("Failed to add questions:", error);
+    res.status(500).json({ error: "Failed to add questions." });
   }
 }

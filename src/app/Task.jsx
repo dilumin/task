@@ -10,30 +10,25 @@ function Task() {
   const [questions, setQuestions] = useState([]); // To store questions fetched from the API
   const [isLoading, setIsLoading] = useState(false); // For loading state
 
-  // Handle email input change
   const handleEmailChange = (e) => setEmail(e.target.value);
 
-  // Handle phone number input change
   const handlePhoneChange = (e) => setPhoneNumber(e.target.value);
 
-  // Handle showing questions after validating inputs and fetching data from the backend
   const handleShowQuestions = async () => {
     if (email.trim() === "" || phoneNumber.trim() === "") {
       alert("Please enter a valid email address and phone number.");
     } else {
-      setIsLoading(true); // Show the loading screen
+      setIsLoading(true);
       try {
-        // Make an API request to fetch questions
         const response = await fetch(`/api/users?email=${email}&phoneNumber=${phoneNumber}`);
         const data = await response.json();
 
         if (response.ok) {
-          // If user is found, set questions
           setQuestions([
-            data.randomQuestions.question1,
-            data.randomQuestions.question2,
-            data.randomQuestions.question3,
-            data.randomQuestions.question4,
+            data.randomQuestions.question1.question,
+            data.randomQuestions.question2.question,
+            data.randomQuestions.question3.question,
+            data.randomQuestions.question4.question,
           ]);
           setShowQuestions(true); // Show questions
         } else {
@@ -73,8 +68,20 @@ function Task() {
       </div>
       <div className="content">
         <div className="logo">
-          <img src="/cs.png" alt="CS Logo" width={90} height={90} />
-          <img src="/aiesec.png" alt="AIESEC Logo" width={250} height={30} />
+        <Image
+          src="/cs.png"
+          alt="CS Logo"
+          width={90}
+          height={90}
+          sizes="(max-width: 768px) 60px, 60px"
+        />
+        <Image
+          src="/aiesec.png"
+          alt="AIESEC Logo"
+          width={250}
+          height={30}
+          sizes="(max-width: 768px) 200px, 250px"
+        />
         </div>
         <div className="main-con">
           <div className="welcome">Welcome to the Newbie Assessments</div>
@@ -120,7 +127,6 @@ function Task() {
         </div>
       </div>
 
-      {/* Loading Screen */}
       {isLoading && (
         <div className="loading-overlay">
           <div className="loader"></div>

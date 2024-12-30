@@ -35,7 +35,9 @@ export default async function users(req, res) {
       
         const randomIndex = Math.floor(Math.random() * count);
         const randomDocument = await collection.find().skip(randomIndex).limit(1).toArray();
-        return randomDocument[0].string;  // Return the question text correctly
+        return {
+          question: randomDocument[0].string,  
+        };
       };
 
       // Fetch one random question from each question bank
