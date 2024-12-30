@@ -226,12 +226,42 @@ html, body {
     text-align: left; /* Align text to the left */
   }
   
+  .con-instruction{
+    color: rgb(70, 68, 68);
+    display: flex;
+    justify-content: center;
+  }
+  .con-instruction p{
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    .con-instruction{
+      font-size: 12px;
+    }
+    
+  }
+  @media screen and (max-width:400px) {
+    .con-instruction{
+      font-size: 10px;
+    }
+    
+  }
+
+  .con-instruction h3 {
+    color: #444;
+    text-align: center;
+    margin-bottom: 10px;
+  }
   .questions-block h3 {
-    margin-top: 0; /* Remove default margin for better spacing */
-    margin-bottom: 15px; /* Add space below the heading */
-    font-size: 18px; /* Slightly larger font size */
-    color: #333; /* Darker text color for readability */
-    font-weight: bold; /* Emphasize the heading */
+    margin-top: 0; 
+    margin-bottom: 15px; 
+    font-size: 18px; 
+    color: #333; 
+    font-weight: bold; 
   }
   
   .questions-block ul {
@@ -471,4 +501,18 @@ html, body {
   100% { transform: rotate(360deg); }
 }
   
+.logo img {
+  display: block; /* Prevent inline spacing issues */
+  max-width: 90px; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  aspect-ratio: 1 / 1; /* Enforce 1:1 aspect ratio */
+  object-fit: contain; /* Ensure the image fits within its container */
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    width: 50px; /* Adjust size for smaller screens */
+    height: 50px; /* Maintain 1:1 ratio */
+  }
+}
   

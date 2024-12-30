@@ -68,14 +68,14 @@ function Task() {
       </div>
       <div className="content">
         <div className="logo">
-        <Image
+        <img
           src="/cs.png"
           alt="CS Logo"
           width={90}
           height={90}
           sizes="(max-width: 768px) 60px, 60px"
         />
-        <Image
+        <img
           src="/aiesec.png"
           alt="AIESEC Logo"
           width={250}
@@ -115,6 +115,18 @@ function Task() {
                 </ul>
               </div>
             )}
+          </div>
+        </div>
+        <div className="con-instruction">
+          <div className="instructions">
+            <h3>Instructions</h3>
+            {/* <p style={{marginTop:"5px", marginBottom:"5px"}}>Please read the following instructions carefully </p> */}
+            <ul>
+              <li>Please enter email & number to get the questions</li>
+              <li>Please Avoid using Generative AI platforms to answer.</li>
+              <li>Please provide answers in the form below.</li>
+              <li>Submission Link:</li>
+            </ul>
           </div>
         </div>
         <div className="foot-con">
