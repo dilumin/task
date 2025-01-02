@@ -67,20 +67,20 @@ function Task() {
       </div>
       <div className="content">
         <div className="logo">
-        <img
-          src="/cs.png"
-          alt="CS Logo"
-          width={90}
-          height={90}
-          sizes="(max-width: 768px) 60px, 60px"
-        />
-        <img
-          src="/aiesec.png"
-          alt="AIESEC Logo"
-          width={250}
-          height={30}
-          sizes="(max-width: 768px) 200px, 250px"
-        />
+          <img
+            src="/cs.png"
+            alt="CS Logo"
+            width={90}
+            height={90}
+            sizes="(max-width: 768px) 60px, 60px"
+          />
+          <img
+            src="/aiesec.png"
+            alt="AIESEC Logo"
+            width={250}
+            height={30}
+            sizes="(max-width: 768px) 200px, 250px"
+          />
         </div>
         <div className="main-con">
           <div className="welcome">Welcome to the Newbie Assessments</div>
@@ -104,16 +104,16 @@ function Task() {
                   Check
                 </button>
                 <div className="con-instruction">
-          <div className="instructions">
-            <h3>Instructions</h3>
-            <ul>
-              <li>Please enter email & number to get the questions</li>
-              <li>Please Avoid using Generative AI platforms to answer.</li>
-              <li>In the next page scroll down to answer.</li>
-              <li>In the Answering sheet next page Make Sure to SUBMIT the answers</li>
-            </ul>
-          </div>
-        </div>
+                  <div className="instructions">
+                    <h3>Instructions</h3>
+                    <ul>
+                      <li>Please enter email & number to get the questions</li>
+                      <li>Please Avoid using Generative AI platforms to answer.</li>
+                      <li>In the next page scroll down to answer.</li>
+                      <li>In the Answering sheet next page Make Sure to SUBMIT the answers</li>
+                    </ul>
+                  </div>
+                </div>
               </>
             ) : (
               <div className="questions-block">
@@ -123,7 +123,10 @@ function Task() {
                     <li key={index}>{question}</li>
                   ))}
                 </ul>
-                <div className="iframe-container">
+                <div>
+                  <h4 style={{textAlign:"center", color:"black", marginTop:"8px", marginBottom:"10px"}}>Answer the above questions in the Below sheet and Submit</h4>
+                </div>
+                <div className="iframe-container" style={{ width: "100vw", marginLeft: "-50vw", left: "50%", position: "relative" }}>
                   <iframe
                     src="https://forms.gle/2zxA1HCoMzRtz2Yr7"
                     title="Example Iframe"
@@ -132,6 +135,7 @@ function Task() {
                     style={{ border: "none" }}
                   ></iframe>
                 </div>
+                <h6 style={{textAlign:"center", color:"black"}}>If the Answer sheet is not visible please restart or contact us</h6>
               </div>
             )}
           </div>

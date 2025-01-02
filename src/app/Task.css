@@ -81,6 +81,14 @@ html, body {
     z-index: 1;
     padding: 20px;
     overflow-y: scroll;
+    overflow-x: visible;;
+  }
+
+  @media screen and (max-width: 768px) {
+    .content {
+      width: 90%;
+    }
+    
   }
   
   .logo {
