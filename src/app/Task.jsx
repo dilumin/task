@@ -43,7 +43,6 @@ function Task() {
     }
   };
 
-  // Handle logout
   const handleLogout = () => {
     setEmail("");
     setPhoneNumber("");
@@ -104,6 +103,17 @@ function Task() {
                 <button onClick={handleShowQuestions} className="btn-check">
                   Check
                 </button>
+                <div className="con-instruction">
+          <div className="instructions">
+            <h3>Instructions</h3>
+            <ul>
+              <li>Please enter email & number to get the questions</li>
+              <li>Please Avoid using Generative AI platforms to answer.</li>
+              <li>In the next page scroll down to answer.</li>
+              <li>In the Answering sheet next page Make Sure to SUBMIT the answers</li>
+            </ul>
+          </div>
+        </div>
               </>
             ) : (
               <div className="questions-block">
@@ -113,20 +123,17 @@ function Task() {
                     <li key={index}>{question}</li>
                   ))}
                 </ul>
+                <div className="iframe-container">
+                  <iframe
+                    src="https://forms.gle/2zxA1HCoMzRtz2Yr7"
+                    title="Example Iframe"
+                    width="100%"
+                    height="500px"
+                    style={{ border: "none" }}
+                  ></iframe>
+                </div>
               </div>
             )}
-          </div>
-        </div>
-        <div className="con-instruction">
-          <div className="instructions">
-            <h3>Instructions</h3>
-            {/* <p style={{marginTop:"5px", marginBottom:"5px"}}>Please read the following instructions carefully </p> */}
-            <ul>
-              <li>Please enter email & number to get the questions</li>
-              <li>Please Avoid using Generative AI platforms to answer.</li>
-              <li>Please provide answers in the form below.</li>
-              <li>Submission Link:</li>
-            </ul>
           </div>
         </div>
         <div className="foot-con">

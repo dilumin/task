@@ -73,8 +73,8 @@ html, body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 80vh;
-    width: 80%;
+    height: 85vh;
+    width: 85%;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
