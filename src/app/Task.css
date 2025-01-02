@@ -73,7 +73,8 @@ html, body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 85vh;
+    /* margin-top: 50px; */
+    height: 80vh;
     width: 85%;
     background-color: white;
     border-radius: 10px;
@@ -83,6 +84,7 @@ html, body {
     overflow-y: scroll;
     overflow-x: visible;;
   }
+
 
   @media screen and (max-width: 768px) {
     .content {

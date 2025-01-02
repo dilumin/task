@@ -114,6 +114,14 @@ function Task() {
                     </ul>
                   </div>
                 </div>
+                <div className="foot-con">
+                  <div className="footer">
+                    <p className="quote">
+                      "Leadership is the capacity to translate vision into reality."
+                    </p>
+                    <p>&copy; 2024 AIESEC in University of Moratuwa. All rights reserved.</p>
+                  </div>
+                </div>
               </>
             ) : (
               <div className="questions-block">
@@ -131,21 +139,13 @@ function Task() {
                     src="https://forms.gle/2zxA1HCoMzRtz2Yr7"
                     title="Example Iframe"
                     width="100%"
-                    height="500px"
+                    height="1000px"
                     style={{ border: "none" }}
                   ></iframe>
                 </div>
                 <h6 style={{textAlign:"center", color:"black"}}>If the Answer sheet is not visible please restart or contact us</h6>
               </div>
             )}
-          </div>
-        </div>
-        <div className="foot-con">
-          <div className="footer">
-            <p className="quote">
-              "Leadership is the capacity to translate vision into reality."
-            </p>
-            <p>&copy; 2024 AIESEC in University of Moratuwa. All rights reserved.</p>
           </div>
         </div>
       </div>
