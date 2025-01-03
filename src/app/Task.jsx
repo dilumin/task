@@ -15,7 +15,7 @@ function Task() {
   const handlePhoneChange = (e) => setPhoneNumber(e.target.value);
 
   const handleShowQuestions = async () => {
-    if (email.trim() === "" || phoneNumber.trim() === "") {
+    if (email.trim() === "" || phoneNumber.trim() === "" || !email.includes("@") || !phoneNumber.match(/^\d{10}$/)) {
       alert("Please enter a valid email address and phone number.");
     } else {
       setIsLoading(true);
@@ -30,7 +30,7 @@ function Task() {
             data.randomQuestions.question3.question,
             data.randomQuestions.question4.question,
           ]);
-          setShowQuestions(true); // Show questions
+          setShowQuestions(true); 
         } else {
           alert(data.error || "An error occurred.");
         }
@@ -38,7 +38,7 @@ function Task() {
         console.error("Failed to fetch user data:", error);
         alert("Failed to fetch user data. Please try again.");
       } finally {
-        setIsLoading(false); // Hide the loading screen
+        setIsLoading(false); 
       }
     }
   };
@@ -47,7 +47,7 @@ function Task() {
     setEmail("");
     setPhoneNumber("");
     setShowQuestions(false);
-    setQuestions([]); // Clear the questions on logout
+    setQuestions([]); 
   };
 
   return (
